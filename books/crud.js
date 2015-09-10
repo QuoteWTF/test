@@ -55,7 +55,6 @@ module.exports = function(model, images, oauth2) {
   });
 
 
-  // [START mine]
   // Use the oauth2.required middleware to ensure that only logged-in users
   // can access this handler.
   router.get('/mine', oauth2.required, function list(req, res) {
@@ -69,7 +68,6 @@ module.exports = function(model, images, oauth2) {
       }
     );
   });
-  // [END mine]
 
 
   router.get('/add', function addForm(req, res) {
@@ -80,7 +78,6 @@ module.exports = function(model, images, oauth2) {
   });
 
 
-  // [START add]
   router.post('/add', function insert(req, res) {
     var data = req.body;
 
@@ -103,7 +100,6 @@ module.exports = function(model, images, oauth2) {
       res.redirect(req.baseUrl + '/' + savedData.id);
     });
   });
-  // [END add]
 
 
 
